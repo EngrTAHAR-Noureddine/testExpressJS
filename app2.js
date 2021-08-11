@@ -7,11 +7,11 @@ const expressHbs = require('express-handlebars');
 const app = express();
 // setting handlebars 
 app.engine(
-  'hbs',
+  'hbs', // the name and extenstion 
   expressHbs({
-    layoutsDir: 'views/layouts/',
+    layoutsDir: 'views/layouts/', // obligate add layouts espatially main-layout
     defaultLayout: 'main-layout',
-    extname: 'hbs'
+    extname: 'hbs' // we use hbs not handlebars
   })
 );
 app.set('view engine', 'hbs');

@@ -6,9 +6,22 @@ var express = require('express');
 
 var bodyParser = require('body-parser');
 
-var app = express();
-app.set('view engine', 'pug');
+var expressHbs = require('express-handlebars');
+
+var app = express(); // setting handlebars 
+
+app.engine('hbs', expressHbs({
+  layoutsDir: 'views/layouts/',
+  defaultLayout: 'main-layout',
+  extname: 'hbs'
+}));
+app.set('view engine', 'hbs');
 app.set('views', 'views');
+/* first parameter is 
+the same in second parameter in app.set and the same of extention of handlebars */
+// init pug to write 
+// app.set('view engine', 'pug');
+// app.set('views','views');
 
 var adminRoutes = require('./routes/admin');
 

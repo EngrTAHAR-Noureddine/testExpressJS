@@ -14,11 +14,15 @@ router.get('/', function (req, res, next) {
   var adProducts = adminData.products; // this line : to send file html.
   // res.sendFile(path.join(rootDir, 'views', 'shop.html'));
   // and this line for pug: 
+  //res.render('shope',{ products : adProducts, pageTitle: 'Shop', productsList:"yes" });
 
   res.render('shope', {
-    products: adProducts,
+    prods: adProducts,
     pageTitle: 'Shop',
-    productsList: "yes"
+    path: '/',
+    hasProducts: adProducts.length > 0,
+    activeShop: true,
+    productCSS: true
   });
 }); // const express = require('express');
 // const router = express.Router();

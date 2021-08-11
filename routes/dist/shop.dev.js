@@ -17,7 +17,8 @@ router.get('/', function (req, res, next) {
 
   res.render('shope', {
     products: adProducts,
-    pageTitle: 'Shop'
+    pageTitle: 'Shop',
+    productsList: "yes"
   });
 }); // const express = require('express');
 // const router = express.Router();

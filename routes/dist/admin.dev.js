@@ -12,7 +12,8 @@ var products = []; // /admin/add-product => GET
 router.get('/add-product', function (req, res, next) {
   // res.sendFile(path.join(rootDir, 'views', 'add-product.html'));
   res.render('add-product', {
-    pageTitle: 'Add-Product'
+    pageTitle: 'Add-Product',
+    productsList: "no"
   });
 }); // /admin/add-product => POST
 
